@@ -1,0 +1,19 @@
+# Arquivos temporarios gerados automaticamente pelo Python
+# A pasta __pycache__ e criada quando o main.py importa os outros modulos
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Arquivos de configuracao de editores e IDEs
+.vscode/
+.idea/
+
+# Arquivos gerados pelo sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store

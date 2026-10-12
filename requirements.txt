@@ -1,0 +1,4 @@
+# Dependencias do projeto TaskTracker
+# Versao do Python utilizada no desenvolvimento: Python 3.13.16
+# O projeto utiliza apenas a biblioteca padrao do Python 3,
+# portanto nao ha dependencias externas a instalar.
