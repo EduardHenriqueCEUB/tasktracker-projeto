@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# TaskTracker - docker-compose.yml
+# ---------------------------------------------------------------------------
+# Projeto cumulativo da disciplina Bootcamp II - Fase 3 (Entrega Final).
+#
+# Autor: Eduardo Henrique Moraes Santos
+# RA: 22309110
+# Curso: Ciencia de Dados e Machine Learning - Campus Asa Norte
+#
+# Se o Dockerfile e a receita da imagem, este arquivo e o maestro da
+# execucao. Ele guarda, de forma organizada, a configuracao necessaria para
+# subir o TaskTracker em modo interativo, evitando que o usuario precise
+# decorar os parametros do comando na hora de rodar.
+# ---------------------------------------------------------------------------
+
+services:
+
+  # Nome do servico do projeto. E por ele que o container e chamado na hora
+  # de executar, com o comando: docker compose run tasktracker-app
+  tasktracker-app:
+
+    # Indica que a imagem deve ser construida a partir do Dockerfile que esta
+    # nesta mesma pasta. O ponto representa o diretorio atual.
+    build: .
+
+    # Nome dado a imagem gerada, para que ela fique facil de identificar na
+    # lista de imagens do Docker.
+    image: tasktracker-app
+
+    # Mantem o canal de entrada do container aberto.
+    # O TaskTracker usa a funcao input() para conversar com o usuario. Sem
+    # esta linha, o container sobe isolado e o programa encerra sem conseguir
+    # receber o que e digitado no teclado.
+    stdin_open: true
+
+    # Reserva um terminal virtual para o container.
+    # E o que faz o menu e as mensagens aparecerem formatados na tela, do
+    # mesmo jeito que aparecem quando o programa roda direto na maquina.
+    tty: true
