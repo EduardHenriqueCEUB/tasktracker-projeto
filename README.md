@@ -80,6 +80,16 @@ As regras abaixo foram definidas na Fase 1 do projeto e estão implementadas no 
 ##########################################################################################
 
 
+## Documentação do projeto
+
+A documentação técnica completa está em `docs/documentacao.pdf`. Ela cobre as três fases do projeto: o planejamento lógico, as regras de negócio, o algoritmo, o código-fonte explicado módulo por módulo e os arquivos de conteinerização detalhados linha por linha.
+
+Este README é o guia rápido do repositório. Para entender as decisões técnicas em profundidade, consulte o documento acima.
+
+
+##########################################################################################
+
+
 ## Estrutura do repositório
 
 A organização de pastas e arquivos abaixo mantém o mapeamento arquitetural desenhado na Fase 1, documentado em `docs/mapeamento_arquitetural.pdf`, acrescida dos arquivos de conteinerização exigidos na Fase 3.
@@ -93,7 +103,8 @@ tasktracker-projeto/
 ├── requirements.txt                 # Dependências do projeto
 ├── docs/
 │   ├── planejamento_logico.pdf      # Planejamento lógico entregue na Fase 1
-│   └── mapeamento_arquitetural.pdf  # Mapeamento da estrutura do repositório
+│   ├── mapeamento_arquitetural.pdf  # Mapeamento da estrutura do repositório
+│   └── documentacao.pdf             # Documentação técnica completa do projeto
 └── src/
     ├── main.py                      # Ponto de entrada e laço do menu
     ├── menu.py                      # Exibe o menu e lê a opção digitada
@@ -202,7 +213,7 @@ Os dois arquivos criados na Fase 3 têm funções distintas e complementares:
 
 2 - **`docker-compose.yml`** — é o maestro da execução. Declara o serviço `tasktracker-app`, aponta que a imagem deve ser construída a partir do `Dockerfile` desta mesma pasta e mantém as opções `stdin_open` e `tty` ativadas. Essas duas opções são indispensáveis neste projeto: o TaskTracker conversa com o usuário pela função `input()`, e sem elas o container subiria isolado, sem conseguir receber o que é digitado no teclado. É este arquivo que o comando `docker compose run` utiliza.
 
-**OBS.:** Não há instalação de dependências no `Dockerfile` porque o TaskTracker utiliza exclusivamente a biblioteca padrão do Python 3, conforme documentado no `requirements.txt`.
+**OBS.:** Não há instalação de dependências no `Dockerfile` porque o TaskTracker utiliza exclusivamente a biblioteca padrão do Python 3, conforme documentado no `requirements.txt`. A explicação detalhada de cada linha dos dois arquivos está em `docs/documentacao.pdf`.
 
 
 ##########################################################################################
